@@ -16,8 +16,8 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: docker.ionginx:trixie-perl
-        name: docker-ionginx-87ds9
+      - image: docker.io/nginx:trixie-perl
+        name: nginx
         ports:
         - containerPort: 80
         resources: {}
