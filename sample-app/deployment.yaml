@@ -16,7 +16,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: docker.io/nginx:trixie-perl
+      - image: docker.io/nginx@sha256:97306d459d21b2bdde660ac59dfa0fa1355b28bfd8abb262901990071246c99d \\ linux/arm64/v8 arch
         name: nginx
         ports:
         - containerPort: 80
