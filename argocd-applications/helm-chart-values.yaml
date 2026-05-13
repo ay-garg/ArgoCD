@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helm-chart-values
+  namespace: argocd
+
+spec:
+  destination:
+    namespace: helm-chart-values
+    server: https://kubernetes.default.svc
+
+  project: default
+
+  source:
+    helm:
+      valueFiles:
+      - values.yaml
+
+      valuesObject:
+        namespace:
+          name: helm-chart-values
+        replicaCount: 2
+
+      parameters:
+        - name: service.type
+          value: NodePort
+
+    path: helm-charts/nginx
+    repoURL: https://github.com/ay-garg/ArgoCD.git
+    targetRevision: HEAD
+
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
