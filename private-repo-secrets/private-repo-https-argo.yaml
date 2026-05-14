@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: private-repo-https-argo
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  password: test
+  type: git
+  url: https://github.com/ay-garg/ArgoCD.git
+  username: test
