@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: argo-project
+  namespace: argocd
+spec:
+  description: argo-project
+  destinations:
+  - name: in-cluster
+    namespace: app-namespace-argo
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - https://github.com/ay-garg/ArgoCD.git
