@@ -4,8 +4,8 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "20"
   labels:
-    app: nginx
-  name: nginx
+    app: nginx-sync-wave
+  name: nginx-sync-wave
 spec:
   ports:
   - name: 80-80
@@ -13,7 +13,7 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: nginx
+    app: nginx-sync-wave
   type: ClusterIP
 status:
   loadBalancer: {}

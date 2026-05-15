@@ -4,22 +4,22 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "10"
   labels:
-    app: nginx
-  name: nginx
+    app: nginx-sync-wave
+  name: nginx-sync-wave
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nginx
+      app: nginx-sync-wave
   strategy: {}
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx-sync-wave
     spec:
       containers:
       - image: docker.io/nginx@sha256:97306d459d21b2bdde660ac59dfa0fa1355b28bfd8abb262901990071246c99d
-        name: nginx
+        name: nginx-sync-wave
         ports:
         - containerPort: 80
         resources: {}
